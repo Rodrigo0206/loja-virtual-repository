@@ -9,7 +9,7 @@ public class TestaListagem {
 
 		ConnectionFactory connectionFactory = new ConnectionFactory();
 		Connection connection = connectionFactory.recuperarConexao();
-
+		connection.setAutoCommit(false);
 		
 		PreparedStatement stm = connection.prepareStatement("SELECT ID, NOME, DESCRICACAO FROM PRODUTO ");
 		stm.execute();
